@@ -17,7 +17,7 @@ function App() {
   const [displayedCocktail, setDisplayedCocktail] = useState(''); // useState for displaying cocktail title
   const [formSubmitted, setFormSubmitted] = useState(false); // useState for submitting form
   const [searchError, setSearchError] = useState(false); // useState if search fails
-  const [visibleCard, setVisibleCard] = useState(false);
+  const [visibleCard, setVisibleCard] = useState(false); // useState for cocktail card visibility
 
   const apiKey = process.env.REACT_APP_API_NINJAS_API_KEY;
 
@@ -33,9 +33,9 @@ function App() {
   function handleSubmit(event){
     event.preventDefault();
     // console.log(event);
-    setFormSubmitted(true);
+    setFormSubmitted(true); // so that useEffect will occur
 
-    setTimeout(() => {
+    setTimeout(() => { // for clearing input field NOT WORKING
       setName('');
     }, 100);
   };
@@ -51,9 +51,9 @@ function App() {
       .then((response) => response.json())
       .then((data) =>{
         console.log(data);
-        const firstCocktail = data[0];
+        const firstCocktail = data[0]; // Accessing ONLY the first instance of cocktail that comes through
         // setName(firstCocktail.name);
-        setVisibleCard(true);
+        setVisibleCard(true); // cocktail-card is visible
 
         setIngredients(firstCocktail.ingredients);
 
@@ -67,11 +67,11 @@ function App() {
 
       .catch((error) => {
         console.error('A problem occurred when fetching from Api-Ninjas:', error);
-        setSearchError(true);
-        setVisibleCard(false);
+        setSearchError(true); // results class will show up
+        setVisibleCard(false); // cocktail card will be hidden
       });
     }
-  }, [formSubmitted, name, apiKey])
+  }, [formSubmitted, name, apiKey]) // dependent on these variables
 
 
 
@@ -94,7 +94,7 @@ function App() {
 
         <div className={visibleCard === true ? 'cocktail-card' : 'cocktail-card-hidden'} style={{backgroundImage: "url('images/cocktails.png')", backgroundPosition: 'bottom right', backgroundRepeat: 'no-repeat', backgroundSize: '30%'}}>
           {/* COCKTAIL NAME */}
-          <h1 className='cocktail-title'>{displayedCocktail.charAt(0).toUpperCase() + displayedCocktail.slice(1)} Recipe</h1>
+          <h1 className='cocktail-title'>{displayedCocktail.charAt(0).toUpperCase() + displayedCocktail.slice(1)} Recipe</h1> {/* displayed cocktail title is converted to capitalised */}
 
           {/* INSTRUCTIONS */}
           <span className='instructions'>
@@ -106,6 +106,7 @@ function App() {
             <h3 className='ingredients-title'>Ingredients:</h3>
 
             {/* MAP INGREDIENTS HERE */}
+            {/* If there is a field called ingredients and it contains data */}
             <ul className='ingredients-list'>
               {ingredients && ingredients.length > 0 ? (
                 ingredients.map((ingredient, index) =>
