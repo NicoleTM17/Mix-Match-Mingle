@@ -1,38 +1,95 @@
-.App {
+.container{
+  display: block;
+  margin: 2em auto;
+  width: 50%;
+  border: 1px solid red;
+}
+
+.logo{
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  margin-top: 1em;
+}
+
+.searchbar{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search{
+  width: 50%;
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.submit-btn{
+  padding: 10px 10px;
+  border-radius: 6px;
+  border: 1px solid black;
+  margin-left: 0.3em;
+  background-color: white;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.submit-btn:hover{
+  opacity: 0.7;
 }
 
-.App-link {
-  color: #61dafb;
+.search-results-section{
+  margin-top: 1.5em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cocktail-card{
+  border: 1px solid blue;
+  background-color: white;
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 1.5em;
+  padding: 2em 2em;
+}
+
+.cocktail-title{
+  text-align: center;
+  text-decoration: underline;
+}
+
+.instructions-title{
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.instructions-text{
+  text-align: center;
+  font-style: italic;
+  margin-bottom: 3em;
+  opacity: 0.9;
+  font-size: 0.75em;
+}
+
+.ingredients-title{
+  text-align: start;
+  padding-left: 1em;
+}
+
+
+footer{
+  text-align: center;
+  opacity: 0.7;
+  font-size: 0.75em;
+}
+
+
+/* CONDITIONAL */
+
+.results{
+  text-align: center;
+  font-size: 0.8em;
+  opacity: 0.8;
+}
+
+.results-hidden{
+  display: none;
 }
