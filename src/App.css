@@ -74,6 +74,10 @@
   padding-left: 1em;
 }
 
+.placeholder{
+  list-style-type: none;
+}
+
 
 footer{
   text-align: center;
@@ -88,8 +92,13 @@ footer{
   text-align: center;
   font-size: 0.8em;
   opacity: 0.8;
+  margin-top: -1em;
 }
 
 .results-hidden{
+  display: none;
+}
+
+.cocktail-card-hidden{
   display: none;
 }
