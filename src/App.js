@@ -2,11 +2,18 @@ import { useState, useEffect } from 'react';
 
 
 import './App.css';
-// This is a webpage for getting cocktail recipes
-// When a user types in a cocktail name e.g. 'mojito' it should return ONE recipe matching this search
-// So when inputting, we need to RETRIEVE the name of the cocktail
-// We need to return the name, instructions and ingredients
-// If nothing is returned, the 'results' class should be shown
+
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: [
+      'Noto+Sans+JP:wght@200;300;400',
+    ],
+  },
+});
+
+
 
 function App() {
 
@@ -33,11 +40,7 @@ function App() {
   function handleSubmit(event){
     event.preventDefault();
     // console.log(event);
-    setFormSubmitted(true); // so that useEffect will occur
-
-    setTimeout(() => { // for clearing input field NOT WORKING
-      setName('');
-    }, 100);
+    setFormSubmitted(true); // so that useEffect will occur after form submission
   };
 
 
@@ -63,6 +66,8 @@ function App() {
         setSearchError(false);
 
         setDisplayedCocktail(firstCocktail.name);
+
+        setName(''); // clears the input field after form submission
       })
 
       .catch((error) => {
@@ -78,12 +83,13 @@ function App() {
   return (
     <div className="container">
       <img className='logo' src='images/logo.png' alt='logo'/>
+      <p className='slogan'>Unleash your inner mixologist ✧</p>
 
       {/* SEARCH BAR */}
       <div className='search-bar'>
-        <form className='searchbar'>
-          <input onChange={handleChange} type='text' className='search' style={{fontStyle: 'italic'}} placeholder='Enter a cocktail of your choice'/>
-          <input onClick={handleSubmit} type='submit' className='submit-btn' value='Enter'/>
+        <form onSubmit={handleSubmit} className='searchbar'>
+          <input onChange={handleChange} type='text' value={name} className='search' style={{fontStyle: 'italic'}} placeholder='Enter a cocktail of your choice'/> {/* the value attribute of the input field needs to be correctly bound to the name state for the input to clear! */}
+          <input  type='submit' className='submit-btn' value='Enter'/>
         </form>
       </div>
 

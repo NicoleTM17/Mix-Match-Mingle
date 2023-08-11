@@ -1,8 +1,17 @@
+
+body{
+  background-image: url(https://images.unsplash.com/photo-1615714259168-0bf599358225?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80);
+  background-size: cover;
+}
+
+
 .container{
   display: block;
   margin: 2em auto;
   width: 50%;
-  border: 1px solid red;
+  border: 0;
+  border-radius: 8px;
+  background-color: black;
 }
 
 .logo{
@@ -10,6 +19,19 @@
   margin: 0 auto;
   width: 30%;
   margin-top: 1em;
+}
+
+.slogan{
+  color: white;
+  font-size: 0.8em;
+  font-style: italic;
+  text-align: center;
+  margin-top: -2em;
+}
+
+::placeholder {
+  color: #FF19CF;
+  opacity: 0.8;
 }
 
 .searchbar{
@@ -20,45 +42,64 @@
   width: 50%;
   padding: 10px 15px;
   border-radius: 6px;
-  border: 1px solid black;
+  border: 2px solid #FF19CF;
   margin-top: 2em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+  font-family: 'Noto Sans JP';
+  background-color: white;
+  color: #FF19CF;
 }
 
 .submit-btn{
   padding: 10px 10px;
   border-radius: 6px;
-  border: 1px solid black;
-  margin-left: 0.3em;
+  border: 2px solid #FF19CF;
+  margin-left: 0.1em;
   background-color: white;
+  font-family: 'Noto Sans JP';
+  background-color: #FF19CF;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
 }
 
 .submit-btn:hover{
-  opacity: 0.7;
+  background-color: white;
+  border: 2px solid rgb(#FF19CF);
+  color: #FF19CF;
+  font-weight: 200;
 }
 
 .search-results-section{
   margin-top: 1.5em;
+  font-family: 'Noto Sans JP';
 }
 
+
 .cocktail-card{
-  border: 1px solid blue;
-  background-color: white;
-  width: 80%;
   display: block;
   margin: 0 auto;
+  box-shadow: rgba(140, 82, 255, 0.4) 5px 5px, rgba(140, 82, 255, 0.2) 10px 10px, 25px 25px;
+  background-color: white;
+  width: 80%;
   margin-bottom: 1.5em;
   padding: 2em 2em;
+  border-radius: 8px;
 }
 
 .cocktail-title{
   text-align: center;
   text-decoration: underline;
+  text-underline-offset: 0.2em;
+  margin-top: -23px;
+  color: #8C52FF;
 }
 
 .instructions-title{
   text-align: center;
   margin-bottom: 1em;
+  color: #8C52FF;
 }
 
 .instructions-text{
@@ -72,6 +113,11 @@
 .ingredients-title{
   text-align: start;
   padding-left: 1em;
+  color: #8C52FF;
+}
+
+.ingredient{
+  line-height: 1.5em;
 }
 
 .placeholder{
@@ -83,6 +129,8 @@ footer{
   text-align: center;
   opacity: 0.7;
   font-size: 0.75em;
+  padding: 1em 1em;
+  color: white;
 }
 
 
