@@ -1,0 +1,52 @@
+
+@media (max-width: 960px){
+
+  .container{
+    width: 80%;
+  }
+}
+
+@media (max-width: 720px){
+
+  .container{
+    width: 70%;
+  }
+}
+
+@media (max-width: 540px){
+
+    .container{
+      width: 80%;
+    }
+
+    .slogan{
+      font-size: 0.6em;
+    }
+
+    .logo{
+      width: 40%;
+    }
+
+    .search{
+      width: 55%;
+      font-size: 0.6em;
+    }
+
+    .submit-btn{
+      font-size: 0.75em;
+      padding: 0.6em;
+    }
+
+    footer{
+      font-size: 0.5em;
+    }
+
+    .cocktail-card{
+      width: 65%;
+      background-size: 40%;
+    }
+
+    .search-results-section{
+      font-size: 0.8em;
+    }
+}
